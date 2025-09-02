@@ -5,6 +5,7 @@ import by.cher.spring.database.entity.User;
 import by.cher.spring.dto.IPersonalInfo;
 import by.cher.spring.dto.PersonalInfo;
 import by.cher.spring.dto.UserFilter;
+import by.cher.spring.mapper.UserCreateEditMapper;
 import lombok.ToString;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -24,7 +25,8 @@ import java.util.Optional;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>,
-        FilterUserRepository, QuerydslPredicateExecutor<User> {
+        FilterUserRepository,
+        QuerydslPredicateExecutor<User> {
 
     Page<User> findAllBy(Pageable pageable);
 
@@ -52,4 +54,5 @@ public interface UserRepository extends JpaRepository<User, Long>,
     int updateRole(Role role, long... ids);
 
 
+    Optional<User> findByUsername(String username);
 }

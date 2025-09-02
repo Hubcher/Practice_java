@@ -20,6 +20,7 @@ public class UserReadMapper implements Mapper<User, UserReadDto> {
         CompanyReadDto company = Optional.ofNullable(object.getCompany())
                 .map(companyReadMapper::map)
                 .orElse(null);
+
         return new UserReadDto(
                 object.getId(),
                 object.getUsername(),

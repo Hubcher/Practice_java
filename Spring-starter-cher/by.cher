@@ -6,3 +6,24 @@
 2025-09-02T10:13:57.472+07:00  INFO 26432 --- [main] b.c.s.d.repository.pool.ConnectionPool   : init connection pool
 2025-09-02T10:13:58.097+07:00  INFO 26432 --- [main] b.c.s.d.repository.pool.ConnectionPool   : init connection pool
 2025-09-02T10:13:58.098+07:00  INFO 26432 --- [main] b.c.s.d.repository.pool.ConnectionPool   : init connection pool
+2025-09-02T12:19:02.078+07:00  INFO 22764 --- [main] b.c.s.d.repository.pool.ConnectionPool   : init connection pool
+2025-09-02T12:19:02.787+07:00  INFO 22764 --- [main] b.c.s.d.repository.pool.ConnectionPool   : init connection pool
+2025-09-02T12:19:02.788+07:00  INFO 22764 --- [main] b.c.s.d.repository.pool.ConnectionPool   : init connection pool
+2025-09-02T12:19:03.488+07:00  WARN 22764 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: ef09e353-d045-4fa7-8465-437e78460827
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-09-02T12:42:20.056+07:00  INFO 11352 --- [main] b.c.s.d.repository.pool.ConnectionPool   : init connection pool
+2025-09-02T12:42:20.644+07:00  INFO 11352 --- [main] b.c.s.d.repository.pool.ConnectionPool   : init connection pool
+2025-09-02T12:42:20.645+07:00  INFO 11352 --- [main] b.c.s.d.repository.pool.ConnectionPool   : init connection pool
+2025-09-02T12:51:28.500+07:00  INFO 3064 --- [main] b.c.s.d.repository.pool.ConnectionPool   : init connection pool
+2025-09-02T12:51:29.114+07:00  INFO 3064 --- [main] b.c.s.d.repository.pool.ConnectionPool   : init connection pool
+2025-09-02T12:51:29.114+07:00  INFO 3064 --- [main] b.c.s.d.repository.pool.ConnectionPool   : init connection pool
+2025-09-02T12:55:03.206+07:00  INFO 26232 --- [main] b.c.s.d.repository.pool.ConnectionPool   : init connection pool
+2025-09-02T12:55:03.754+07:00  INFO 26232 --- [main] b.c.s.d.repository.pool.ConnectionPool   : init connection pool
+2025-09-02T12:55:03.755+07:00  INFO 26232 --- [main] b.c.s.d.repository.pool.ConnectionPool   : init connection pool
+2025-09-02T13:02:16.870+07:00  INFO 3336 --- [main] b.c.s.d.repository.pool.ConnectionPool   : init connection pool
+2025-09-02T13:02:17.403+07:00  INFO 3336 --- [main] b.c.s.d.repository.pool.ConnectionPool   : init connection pool
+2025-09-02T13:02:17.403+07:00  INFO 3336 --- [main] b.c.s.d.repository.pool.ConnectionPool   : init connection pool

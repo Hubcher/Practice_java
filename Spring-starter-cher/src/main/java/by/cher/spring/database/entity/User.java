@@ -31,6 +31,8 @@ public class User implements BaseEntity<Integer> {
 
     private String image;
 
+    private String password;
+
     @Enumerated(EnumType.STRING)
     private Role role;
 

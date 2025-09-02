@@ -1,0 +1,20 @@
+package by.cher.spring.listener;
+
+import org.springframework.context.ApplicationEvent;
+
+import java.time.Clock;
+
+public class EntityEvent extends ApplicationEvent {
+
+    private AccessType accessType;
+
+    public EntityEvent(Object source, AccessType accessType) {
+        super(source);
+        this.accessType = accessType;
+
+    }
+
+    public AccessType getAccessType() {
+        return accessType;
+    }
+}

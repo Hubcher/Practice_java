@@ -1,0 +1,8 @@
+025-09-02T10:02:17.812+07:00  INFO 6184 --- [main] b.c.s.d.repository.pool.ConnectionPool   : init connection pool
+2025-09-02T10:02:18.533+07:00  INFO 6184 --- [main] b.c.s.d.repository.pool.ConnectionPool   : init connection pool
+2025-09-02T10:02:18.534+07:00  INFO 6184 --- [main] b.c.s.d.repository.pool.ConnectionPool   : init connection pool
+2025-09-02T10:03:03.819+07:00  INFO 25392 --- [main] b.c.s.d.repository.pool.ConnectionPool   : init connection pool
+2025-09-02T10:03:04.357+07:00  INFO 25392 --- [main] b.c.s.d.repository.pool.ConnectionPool   : init connection pool
+2025-09-02T10:13:57.472+07:00  INFO 26432 --- [main] b.c.s.d.repository.pool.ConnectionPool   : init connection pool
+2025-09-02T10:13:58.097+07:00  INFO 26432 --- [main] b.c.s.d.repository.pool.ConnectionPool   : init connection pool
+2025-09-02T10:13:58.098+07:00  INFO 26432 --- [main] b.c.s.d.repository.pool.ConnectionPool   : init connection pool

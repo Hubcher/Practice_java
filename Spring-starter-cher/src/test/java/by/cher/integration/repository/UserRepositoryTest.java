@@ -7,6 +7,7 @@ import by.cher.spring.database.repository.UserRepository;
 import by.cher.spring.dto.PersonalInfo;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Slice;
 import org.springframework.data.domain.Sort;
@@ -18,9 +19,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 @IT
-@RequiredArgsConstructor
 public class UserRepositoryTest {
-    private final UserRepository userRepository;
+
+    @Autowired
+    private UserRepository userRepository;
 
     @Test
     void checkPageable() {

@@ -6,7 +6,6 @@ import by.cher.spring.dto.UserReadDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import java.util.Map;
 import java.util.Optional;
 
 @Component

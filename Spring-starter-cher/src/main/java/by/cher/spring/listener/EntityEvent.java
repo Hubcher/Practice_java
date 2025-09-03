@@ -2,7 +2,6 @@ package by.cher.spring.listener;
 
 import org.springframework.context.ApplicationEvent;
 
-import java.time.Clock;
 
 public class EntityEvent extends ApplicationEvent {
 

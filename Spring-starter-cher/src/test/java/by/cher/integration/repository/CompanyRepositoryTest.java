@@ -8,6 +8,7 @@ import by.cher.spring.database.repository.UserRepository;
 import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.Commit;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
@@ -20,13 +21,16 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 @IT
-@RequiredArgsConstructor
 
 public class CompanyRepositoryTest {
 
     private static final Integer APPLE_ID = 5;
-    private final EntityManager entityManager;
-    private final CompanyRepository companyRepository;
+
+    @Autowired
+    private  EntityManager entityManager;
+    
+    @Autowired
+    private  CompanyRepository companyRepository;
 
 
     @Test
@@ -35,7 +39,6 @@ public class CompanyRepositoryTest {
 //        var listCompany = companyRepository.findAllByNameContainingIgnoreCase(FRAGMENT);
 //        assertThat(listCompany).hasSize(3);
     }
-
 
     @Test
     void delete() {

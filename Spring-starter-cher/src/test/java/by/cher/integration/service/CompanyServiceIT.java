@@ -19,8 +19,11 @@ public class CompanyServiceIT {
 
     private static final Integer COMPANY_ID = 1;
 
-    private final CompanyService companyService;
-    private final DatabaseProperties databaseProperties;
+    @Autowired
+    private CompanyService companyService;
+
+    @Autowired
+    private DatabaseProperties databaseProperties;
 
     @Test
     void findById(){

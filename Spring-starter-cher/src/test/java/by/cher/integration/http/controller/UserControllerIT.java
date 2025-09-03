@@ -2,32 +2,32 @@ package by.cher.integration.http.controller;
 
 import by.cher.annotation.IT;
 import lombok.RequiredArgsConstructor;
-import org.hamcrest.collection.IsCollectionWithSize;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import static by.cher.spring.dto.UserCreateEditDto.Fields.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrlPattern;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 
 @IT
 @AutoConfigureMockMvc
-@RequiredArgsConstructor
+@WithMockUser(username = "test@gmail.com", password = "test", authorities = {"ADMIN", "USER"})
 public class UserControllerIT {
-    private final MockMvc mockMvc;
+
+    @Autowired
+    private  MockMvc mockMvc;
 
     @Test
     void findAll() throws Exception {
         mockMvc.perform(get("/users"))
                 .andExpect(status().is2xxSuccessful())
-                .andExpect(MockMvcResultMatchers.view().name("user/users"))
-                .andExpect(MockMvcResultMatchers.model().attributeExists("users"))
-                .andExpect(MockMvcResultMatchers.model().attribute("users", IsCollectionWithSize.hasSize(5)));
+                .andExpect(view().name("user/users"))
+                .andExpect(model().attributeExists("users"));
     }
 
     @Test

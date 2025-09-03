@@ -6,9 +6,9 @@ import by.cher.spring.database.entity.Role;
 import by.cher.spring.dto.UserCreateEditDto;
 import by.cher.spring.dto.UserReadDto;
 import by.cher.spring.service.UserService;
-import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mock.web.MockMultipartFile;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -18,11 +18,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 @IT
-@SpringBootTest
-@RequiredArgsConstructor
 public class UserServiceIT {
 
-    private final UserService userService;
+    @Autowired
+    private  UserService userService;
 
     private final static Long USER_1 = 1L;
     private final static Integer COMPANY_1 = 1;
@@ -31,11 +30,13 @@ public class UserServiceIT {
     void update() {
         UserCreateEditDto userDto = new UserCreateEditDto(
                 "test@gmail.com",
+                "test",
                 LocalDate.now(),
                 "Test",
                 "Test",
                 Role.ADMIN,
-                COMPANY_1
+                COMPANY_1,
+                new MockMultipartFile("test", new byte[0])
         );
 
         Optional<UserReadDto> actualResult = userService.update(USER_1, userDto);
@@ -56,11 +57,13 @@ public class UserServiceIT {
     void create() {
         UserCreateEditDto userDto = new UserCreateEditDto(
                 "test@gmail.com",
+                "test",
                 LocalDate.now(),
                 "Test",
                 "Test",
                 Role.ADMIN,
-                COMPANY_1
+                COMPANY_1,
+                new MockMultipartFile("test", new byte[0])
         );
         UserReadDto actualResult = userService.create(userDto);
 

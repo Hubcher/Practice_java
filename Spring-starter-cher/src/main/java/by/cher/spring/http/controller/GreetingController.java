@@ -1,14 +1,10 @@
 package by.cher.spring.http.controller;
 
 import by.cher.spring.database.entity.Role;
-import by.cher.spring.database.repository.CompanyRepository;
-import by.cher.spring.dto.UserDto;
 import by.cher.spring.dto.UserReadDto;
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Arrays;
 import java.util.List;

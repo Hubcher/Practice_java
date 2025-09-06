@@ -21,7 +21,7 @@ db:
 
 logging:
   level:
-    root: warn
+    root: info
     by.cher.spring.database.repository.pool.ConnectionPool: INFO
   file:
     name: by.cher

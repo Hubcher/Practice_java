@@ -1,4 +1,4 @@
-package by.cher.spring.aop;
+package by.cher.aop;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -8,12 +8,10 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Aspect
-@Component
 @Slf4j
-@Order(2)
-public class SecondAspect {
-    @Around("by.cher.spring.aop.FirstAspect.anyServiceFindByIdMethod() && target(service) && args(id)")
-    public Object addLoggingAround(ProceedingJoinPoint joinPoint, Object service, Object id) throws Throwable {
+public class  SecondAspect {
+    @Around(value = "by.cher.aop.FirstAspect.anyServiceFindByIdMethod() && target(service) && args(id)", argNames = "joinPoint,id,service")
+    public Object addLoggingAround(ProceedingJoinPoint joinPoint, Object id, Object service) throws Throwable {
         log.info("AROUND before - invoked findById method in class {}, with id {}", service, id);
         try {
             Object result = joinPoint.proceed();

@@ -1,2 +1,3 @@
 rootProject.name = 'Spring-starter-cher'
+include 'common-logging-spring-boot-starter'
 

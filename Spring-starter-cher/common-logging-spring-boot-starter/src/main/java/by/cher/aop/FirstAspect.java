@@ -1,16 +1,12 @@
-package by.cher.spring.aop;
+package by.cher.aop;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
-import org.springframework.core.annotation.Order;
-import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 @Slf4j
 @Aspect
-@Component
-@Order(1)
 public class FirstAspect {
 
     // @ - с аннотацией
@@ -19,7 +15,7 @@ public class FirstAspect {
     }
 
     // Без аннотации, лишь имя с постфиксом
-    @Pointcut("within(by.cher.spring.service.*Service)")
+    @Pointcut("within(by.cher.*.service.*Service)")
     public void isServiceLayer() {
     }
 
@@ -32,7 +28,7 @@ public class FirstAspect {
     public void isRepositoryLayer() {
     }
 
-    @Pointcut("isControllerLayer() && @annotation(org.springframework.web.bind.annotation.GetMapping)")
+    @Pointcut("isControllerLayer() && @annotation(org.springframework.*.bind.annotation.GetMapping)")
     public void hasGetMapping(){
     }
 
@@ -40,7 +36,7 @@ public class FirstAspect {
     public void hasModelArg(){
     }
 
-    @Pointcut("isControllerLayer() && @args(by.cher.spring.validator.UserInfo,..)")
+    @Pointcut("isControllerLayer() && @args(by.cher.*.validator.UserInfo,..)")
     public void hasUserInfoParamAnnotation(){}
 
     @Pointcut("bean(userService)")
@@ -53,19 +49,20 @@ public class FirstAspect {
 
     }
 
-    @Pointcut("execution(public * by.cher.spring.service.*Service.findById(*))")
+    @Pointcut("execution(public * by.cher.*.service.*Service.findById(*))")
     public void anyServiceFindByIdMethod() {}
+
 
     @Pointcut("execution(public * findById(*))")
     public void anyFindByIdMethod() {}
 
-    // Advice
+//     Advice
 
-    @Before("anyServiceFindByIdMethod() " +
+    @Before(value = "anyServiceFindByIdMethod() " +
             "&& args(id) " +
             "&& target(service) " +
             "&& this(serviceProxy) " +
-            "&& @within(transactional)" )
+            "&& @within(transactional)", argNames = "joinPoint,id,service,serviceProxy,transactional")
     public void addLogging(JoinPoint joinPoint,
                            Object id,
                            Object service,
@@ -74,10 +71,9 @@ public class FirstAspect {
         log.info("Before invoke findById method in class {}, with id {}", service, id);
     }
 
-
     @AfterReturning(value = "anyServiceFindByIdMethod() " +
             "&& target(service)",
-            returning = "result")
+            returning = "result", argNames = "result,service")
     public void addLoggingAfterReturning(Object result, Object service) {
         log.info("AfterReturning invoke findById method in class {}, with result {}", service, result);
     }

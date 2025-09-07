@@ -51,3 +51,6 @@ spring:
 app:
   image:
     bucket: C:\Java_practice\Practice_java\Spring-starter-cher\images
+  service:
+    logging:
+      enabled: true
